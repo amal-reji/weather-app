@@ -1,7 +1,11 @@
  
 pipeline {
   agent{
-      dockerfile true
+      dockerfile {
+            filename 'dockerfile'
+            dir 'build'
+            label 'docker-node'
+        }
   }
   stages{
       stage('Example'){
